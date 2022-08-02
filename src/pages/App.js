@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div id='App'>
 
-      <Header ></Header>
+      <Header></Header>
 
       <Slider></Slider>
 
