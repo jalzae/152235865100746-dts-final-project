@@ -8,12 +8,13 @@ import Nav from './nav';
 //funct
 import { useState } from 'react'
 
-const Header = () => {
+const Header = (props) => {
   const [menuState, setMenu] = useState(false);
 
   const displayMenu = {
     display: "block",
   };
+
 
   const hideMenu = {
     display: "none",
@@ -52,7 +53,7 @@ const Header = () => {
               <i className="zmdi zmdi-search"></i>
             </div>
 
-            <div className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+            <div onClick={() => props.changeStateLogin()} className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
               <i className="zmdi zmdi-account"></i>
             </div>
 
@@ -81,7 +82,7 @@ const Header = () => {
           <i className="zmdi zmdi-search"></i>
         </div>
 
-        <div className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+        <div onClick={() => props.changeStateLogin()} className="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
           <i className="zmdi zmdi-account"></i>
         </div>
 

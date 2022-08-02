@@ -11,22 +11,31 @@ import Footer from '../components/home/footer'
 import Slider from '../components/home/slider'
 import Banner from '../components/home/banner'
 import Content from '../components/home/body'
+import Login from '../components/single/login';
+
+import { useState } from 'react'
 
 const App = () => {
+  const [stateLogin, setStateLogin] = useState(false)
+
+  const changeStateLogin = () => {
+    setStateLogin(!stateLogin);
+    console.log('test');
+  }
+
   return (
-    <div id='App'>
+    (stateLogin == true) ? <div id='App'> <Login changeStateLogin={changeStateLogin}></Login></div> :
+      <div id='App'>
+        <Header changeStateLogin={changeStateLogin}></Header>
 
-      <Header></Header>
+        <Slider></Slider>
 
-      <Slider></Slider>
+        <Banner></Banner>
 
-      <Banner></Banner>
+        <Content></Content>
 
-      <Content></Content>
-
-      <Footer></Footer>
-
-    </div>
+        <Footer></Footer>
+      </div>
   );
 }
 
