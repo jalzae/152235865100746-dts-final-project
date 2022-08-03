@@ -44,7 +44,7 @@ const Header = (props) => {
 
           <div className="menu-desktop">
             <ul className="main-menu">
-              <Nav></Nav>
+              <Nav changeMenu={props.changeMenu}></Nav>
             </ul>
           </div>
 
@@ -115,7 +115,7 @@ const Header = (props) => {
 
 
       <ul className="main-menu-m">
-        <Nav></Nav>
+        <Nav changeMenu={props.changeMenu}></Nav>
       </ul>
     </div>
 

@@ -1,11 +1,15 @@
 const Login = (props) => {
+  const changeState = () => {
+    props.changeStateLogin()
+    props.changeMenu(1)
+  }
   return (
     <div className="login-section">
       <div class="container">
         <div class="center">
 
           <div class="col-lg-6 col-md-12 col-sm-12 w-full-md card card-body form-login">
-            <i onClick={() => props.changeStateLogin()} className="pointer zmdi zmdi-close"></i>
+            <i onClick={() => changeState()} className="pointer zmdi zmdi-close"></i>
             <form>
               <h4 class="mtext-105 cl2 txt-center p-b-30">
                 Sign In To Continue

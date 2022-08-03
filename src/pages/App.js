@@ -12,30 +12,52 @@ import Slider from '../components/home/slider'
 import Banner from '../components/home/banner'
 import Content from '../components/home/body'
 import Login from '../components/single/login';
-
+import About from './about';
+import Contact from './contact';
+import Event from './event';
 import { useState } from 'react'
 
 const App = () => {
   const [stateLogin, setStateLogin] = useState(false)
+  const [menu, setMenu] = useState(1)
 
   const changeStateLogin = () => {
     setStateLogin(!stateLogin);
-    console.log('test');
+  }
+
+  const changeMenu = (val) => {
+    setMenu(val)
   }
 
   return (
-    (stateLogin == true) ? <div id='App'> <Login changeStateLogin={changeStateLogin}></Login></div> :
-      <div id='App'>
-        <Header changeStateLogin={changeStateLogin}></Header>
 
-        <Slider></Slider>
+    <div id='App'>{
 
-        <Banner></Banner>
+      (stateLogin == true) ? <Login changeMenu={changeMenu} changeStateLogin={changeStateLogin}></Login> :
+        <>
+          <Header changeMenu={changeMenu} changeStateLogin={changeStateLogin}></Header>{
+            (menu == 1) ?
+              <>
+                <Slider></Slider>
 
-        <Content></Content>
+                <Banner></Banner>
 
-        <Footer></Footer>
-      </div>
+                <Content></Content>
+
+                <Footer></Footer>
+              </> :
+              (menu == 2) ?
+                <About></About>
+                : (menu == 3) ?
+                  <Event></Event>
+                  : (menu == 4) ?
+                    <Contact></Contact>
+                    :
+                    <div>Not found Menu</div>}
+        </>
+    }
+
+    </div >
   );
 }
 
