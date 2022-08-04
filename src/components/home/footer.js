@@ -135,7 +135,7 @@ const Footer = () => {
         </div>
 
         <p className="stext-107 cl6 txt-center">
-          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with <i className="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://ebasid.com" target="_blank">Jaisy A.S</a> &amp; distributed by ThemeWagon
 
         </p>
       </div>

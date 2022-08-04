@@ -17,6 +17,6 @@ const contactSlice = createSlice({
 export const { changeAboutValue } =
   contactSlice.actions;
 
-export const select = (state) => state.aboutForm.about;
+export const select = (state) => state.about;
 
 export default contactSlice.reducer;

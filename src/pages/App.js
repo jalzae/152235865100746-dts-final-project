@@ -1,6 +1,7 @@
 //css
 import '../assets/cozastore/css/main.css'
 import '../assets/cozastore/css/util.css'
+import '../assets/cozastore/css/additional.css'
 import '../assets/cozastore/vendor/bootstrap/css/bootstrap.min.css'
 import '../assets/cozastore/fonts/font-awesome-4.7.0/css/font-awesome.min.css'
 import '../assets/cozastore/fonts/iconic/css/material-design-iconic-font.min.css'

@@ -20,6 +20,4 @@ const aboutFormSlice = createSlice({
 export const { changeAboutValue } =
   aboutFormSlice.actions;
 
-export const select = (state) => state.aboutForm.about;
-
 export default aboutFormSlice.reducer;
