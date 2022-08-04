@@ -6,12 +6,24 @@ import interactionPlugin from "@fullcalendar/interaction"
 import "@fullcalendar/daygrid/main.css";
 import "@fullcalendar/timegrid/main.css";
 
-import events from "../../../data/events";
+
+import axios from '../../../plugins/axios/axios'
+import { useEffect, useState } from "react";
 
 const Calendar = () => {
+  const [events, setEvents] = useState([])
   const handleDateClick = (arg) => {
     alert(arg.dateStr)
   }
+
+  const loadevents = async () => {
+    let response = await axios.post('/home/get_calendar', {}, {});
+    setEvents(response.data.data)
+  }
+
+  useEffect(() => {
+    loadevents()
+  })
 
 
   return (<div className="col-lg-12">
