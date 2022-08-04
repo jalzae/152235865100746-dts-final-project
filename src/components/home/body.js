@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   loadMore
 } from "../../store/content"
+import axios from '../../plugins/axios/axios'
 const Content = () => {
 
   const total_page = useSelector((state) => state.contentRTK.total_page);

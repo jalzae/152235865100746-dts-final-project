@@ -8,21 +8,34 @@ const listSlice = createSlice({
   initialState: listContent,
 
   reducers: {
-    async loadData(state) {
-      const response = await axios.post('/home/event_data', {}, {});
-      state.banner = response.data
-      state.list = response.data
-      state.best = response.data
+    loadData(state) {
+
     },
 
-    async loadMore(state, action) {
+    loadMore(state, action) {
 
-    }
+    },
+
+    changeBanner(state, action) {
+      state.banner = action.payload
+    },
+
+    changeList(state, action) {
+      state.list = action.payload
+    },
+
+    changeBest(state, action) {
+      state.best = action.payload
+    },
+
+    changeSelected(state, action) {
+      state.selected = action.payload
+    },
 
   },
 });
 
-export const { loadData, loadMore } =
+export const { loadData, loadMore, changeBanner, changeList, changeBest, changeSelected } =
   listSlice.actions;
 
 export default listSlice.reducer;

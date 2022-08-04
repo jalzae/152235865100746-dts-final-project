@@ -16,9 +16,12 @@ import Login from '../components/single/login';
 import About from './about';
 import Contact from './contact';
 import Event from './event';
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { useDispatch } from "react-redux";
+import { changeBanner, changeList, changeBest } from "../store/content"
+import axios from '../plugins/axios/axios'
 const App = () => {
+  const dispatcher = useDispatch();
   const [stateLogin, setStateLogin] = useState(false)
   const [menu, setMenu] = useState(1)
 
@@ -29,6 +32,19 @@ const App = () => {
   const changeMenu = (val) => {
     setMenu(val)
   }
+
+  const loadData = async () => {
+    const response = await axios.post('/home/event_data', {}, {});
+    console.log(response);
+    dispatcher(changeBanner(response.data.data))
+    dispatcher(changeList(response.data.data))
+    dispatcher(changeBest(response.data.data))
+  }
+
+  useEffect(() => {
+    loadData()
+  })
+
 
   return (
 

@@ -3,15 +3,15 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation } from 'swiper';
 import { useNavigate } from "react-router-dom";
 
-import movies from '../../data/movies'
-
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+import { useSelector } from "react-redux";
+
 const Slider = () => {
   let navigate = useNavigate();
+  const banner = useSelector((state) => state.contentRTK.banner);
   SwiperCore.use([Navigation]);
 
 
@@ -29,11 +29,11 @@ const Slider = () => {
           onReachEnd={(swiper) => { }}
         >
           {
-            movies.results.map((x) =>
+            banner.map((x) =>
               <SwiperSlide>
                 <div onClick={() => { }} className='preview-slide rounded-0 m-4'>
                   <div className='slider d-flex pointer'>
-                    <img style={{ minWidth: "100%", height: "100%", borderRadius: '30px' }} src={'https://image.tmdb.org/t/p/w500' + x.backdrop_path} alt={x.title} />
+                    <img style={{ minWidth: "100%", height: "100%", borderRadius: '30px' }} src={'https://idcosmart.ebasid.com/' + x.banner_event} alt={x.name_event} />
                   </div>
                 </div>
               </SwiperSlide>)
