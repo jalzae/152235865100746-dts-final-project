@@ -23,7 +23,7 @@ const Calendar = () => {
 
   useEffect(() => {
     loadevents()
-  })
+  }, [])
 
 
   return (<div className="col-lg-12">

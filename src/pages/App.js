@@ -35,7 +35,7 @@ const App = () => {
 
   const loadData = async () => {
     const response = await axios.post('/home/event_data', {}, {});
-    console.log(response);
+
     dispatcher(changeBanner(response.data.data))
     dispatcher(changeList(response.data.data))
     dispatcher(changeBest(response.data.data))
